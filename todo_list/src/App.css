@@ -5,11 +5,7 @@ h1 {
   }
 
   body {
-    background: linear-gradient(
-      90deg,
-      rgb(116, 114, 134) 0%,
-      rgb(226, 89, 173) 100%
-    );
+    background: grey
   }
   #todo-list {
     width: 500px;
