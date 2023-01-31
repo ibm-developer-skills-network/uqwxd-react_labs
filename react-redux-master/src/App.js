@@ -1,11 +1,11 @@
 import React from 'react';
-import MainPanel from './components/MainPanel';
+import MainPanel from './Components/MainPanel';
 
 function App() {
-  return (
-      <div>
-        <MainPanel/>
-      </div>
+    return (
+        <div>
+            <MainPanel/>
+        </div>
     );
 }
 
