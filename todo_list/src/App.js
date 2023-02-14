@@ -4,7 +4,24 @@ const App = () => {
   const [todos, setTodos] = React.useState([]);
   const [todo, setTodo] = React.useState("");
   
-  // Add the handlesubmit code here
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const newTodo = {
+      id: new Date().getTime(),
+      text: todo.trim(),
+      completed: false,
+    };
+    if (newTodo.text.length > 0 ) {
+        setTodos([...todos].concat(newTodo)); //method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+        setTodo("");
+    
+    } else {
+        
+        alert("Enter Valid Task");
+        setTodo("");
+    }
+  }
   
   
   // Add the deleteToDo code here
@@ -18,11 +35,17 @@ const App = () => {
   
 return(
 <div className ="App">
-<h1>Todo List</h1>
-<form>
-<input type ="text" align ="right" />
-<button type ="submit">Add Todo</button>
-</form>
+  <h1>Todo List</h1>
+  <form onSubmit={handleSubmit}>
+    <input 
+      type="text"
+      onChange={(e) => setTodo(e.target.value)}
+      placeholder="Add a new task"
+      value={todo}
+    />
+    <button type ="submit">Add Todo</button>
+  </form>
+  {todos.map((todo,i) => <div key={todo+i}>{todo.text}</div>)}
 </div>
 );
 };
