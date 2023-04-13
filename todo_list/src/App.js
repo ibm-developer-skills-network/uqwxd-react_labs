@@ -4,7 +4,7 @@ const App = () => {
   const [todos, setTodos] = React.useState([]);
   const [todo, setTodo] = React.useState("");
   const [todoEditing, setTodoEditing] = React.useState(null);
-    const [editingText, setEditingText] = React.useState("");   
+  const [editingText, setEditingText] = React.useState("");   
 
     React.useEffect(() => {
         const json = localStorage.getItem("todos");
@@ -16,7 +16,7 @@ const App = () => {
     React.useEffect(() => {
         if (todos.length > 0) {
             const json = JSON.stringify(todos);
-    git        localStorage.setItem("todos", json);
+            localStorage.setItem("todos", json);
         }
       }, [todos]);
 
