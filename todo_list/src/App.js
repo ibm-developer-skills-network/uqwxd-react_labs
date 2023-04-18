@@ -29,10 +29,18 @@ const App = () => {
   return (
     <div className="App">
       <h1>Todo List</h1>
-      <form>
-        <input type="text" align="right" />
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          onChange={(e) => setTodo(e.target.value)}
+          placeholder="Add a new task"
+          value={todo}
+        />
         <button type="submit">Add Todo</button>
       </form>
+      {todos.map((todo) => (
+        <div>{todo.text}</div>
+      ))}
     </div>
   );
 };
