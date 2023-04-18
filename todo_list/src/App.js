@@ -1,5 +1,7 @@
-import React from "react";
-import "./App.css";
+import './App.css';
+
+import React from 'react';
+
 const App = () => {
   const [todos, setTodos] = React.useState([]);
   const [todo, setTodo] = React.useState("");
@@ -21,6 +23,10 @@ const App = () => {
     }
   }
   // Add the deleteToDo code here
+  function deleteTodo(id) {
+    let updatedTodos = [...todos].filter((todo) => todo.id !== id);
+    setTodos(updatedTodos);
+  }
 
   // Add the toggleComplete code here
 
