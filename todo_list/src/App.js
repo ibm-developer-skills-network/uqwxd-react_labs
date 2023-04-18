@@ -19,8 +19,8 @@ const App = () => {
 
   React.useEffect(() => {
     if ([todos].length > 0) {
-      const json = JSON.stringify(todos);
-      localStorage.setItem("todos", json);
+    const json = JSON.stringify(todos);
+    localStorage.setItem("todos", json);
     }
   }, [todos]);
 
@@ -59,6 +59,10 @@ const App = () => {
 
   // Add the submitEdits code here
   function submitEdits(id) {
+    if (editingText.trim() === "") {
+      alert("Enter Valid Task");
+      return;
+    }
     const updatedTodos = [...todos].map((todo) => {
       if (todo.id === id) {
         todo.text = editingText;
@@ -112,4 +116,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;
