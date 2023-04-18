@@ -1,11 +1,8 @@
-h1 {
-  text-align: center;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-style: italic;
-}
-
 body {
-  background: grey;
+  background-color: #f8f8f8;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 #todo-list {
@@ -15,7 +12,7 @@ body {
 
 form,
 .todo {
-  border: 1px solid rgb(15, 26, 61);
+  border: 1px solid #e0e0e0;
   padding: 10px 20px;
   margin-bottom: 10px;
 }
@@ -27,7 +24,7 @@ form {
 }
 
 form input {
-  padding: 4px 8px;
+  padding: 8px;
   flex-grow: 1;
   margin-right: 16px;
 }
@@ -39,23 +36,24 @@ form input {
 
 .todo input[type="checkbox"] {
   margin-left: auto;
-  margin-right: 1rem;
-  transform: scale(1.2);
 }
 
 button {
   font-size: 16px;
-  background-color: rgb(62, 138, 151);
+  background-color: #0062ff;
   color: #fff;
   border-radius: 8px;
   border: none;
-  padding: 8px 16px;
+  padding: 12px 20px;
   cursor: pointer;
 }
 
-button:hover,
+button:hover {
+  background-color: #0049c9;
+}
+
 button:active {
-  background-color: rgb(173, 47, 28);
+  background-color: #003499;
 }
 
 button:focus {
@@ -64,7 +62,12 @@ button:focus {
 
 input[type="text"] {
   font-size: 20px;
-  font-family: monospace;
+  font-family: Arial, sans-serif;
+  padding: 10px;
+}
+
+.todo-text input {
+  padding: 6px;
 }
 
 .todo-text {
@@ -76,9 +79,17 @@ input[type="text"] {
   align-items: center;
 }
 
-.todo-completed,
-.todo-actions {
+.todo-text input[type="checkbox"] {
+  margin-right: 1rem;
+  transform: scale(1.2);
+}
+
+.todo-completed {
   display: flex;
   margin: 10px 0;
+}
+
+.todo-actions {
+  display: flex;
   justify-content: space-between;
 }
