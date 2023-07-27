@@ -5,7 +5,7 @@ h1 {
   }
 
   body {
-    background: grey
+    background: white;
   }
   #todo-list {
     width: 500px;
