@@ -64,6 +64,7 @@ h1 {
     margin-bottom: 16px;
     display: flex;
     align-items: center;
+    text-align: center;
   }
   .todo-completed {
     display: flex;
