@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import "./App.css";
 const App = () => {
-  const [todos, setTodos] = React.useState([]);
-  const [todo, setTodo] = React.useState("");
+  const [todos, setTodos] = useState([]);
+  const [todo, setTodo] = useState("");
   
   // Add the handlesubmit code here
   
