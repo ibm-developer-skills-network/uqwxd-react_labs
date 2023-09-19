@@ -31,6 +31,12 @@ h1 {
     flex-direction: column;
   }
   
+  .todotext {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+  }
+  
   button {
     font-size: 16px;
     background-color: rgb(62, 138, 151);
