@@ -73,3 +73,8 @@ h1 {
     display: flex;
     justify-content: space-between;
   }
+
+  #completed {
+    margin-left: 15px;
+  }
+
