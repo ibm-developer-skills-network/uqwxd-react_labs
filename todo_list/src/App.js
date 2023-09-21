@@ -19,7 +19,7 @@ return(
 <div className ="App">
 <h1>Todo List</h1>
 <form>
-<input type ="text" align ="right" />
+<input type ="text" align ="right" id= 'todoAdd'/>
 <button type ="submit">Add Todo</button>
 </form>
 </div>
