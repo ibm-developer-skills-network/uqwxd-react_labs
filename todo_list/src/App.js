@@ -1,10 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
-const App = () => {
-  const [todos, setTodos] = useState([]);
-  const [todoEditing, setTodoEditing] = useState(null);
 
-  // Add the handlesubmit code here
+const App = () => {
+  const [todos, setTodos] = React.useState([]);
+
+  const [todoEditing, setTodoEditing] = React.useState(null);
+
+  React.useEffect(() => {
+    const json = localStorage.getItem("todos");
+    const loadedTodos = JSON.parse(json);
+    if (loadedTodos) {
+      setTodos(loadedTodos);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    if (todos.length > 0) {
+      const json = JSON.stringify(todos);
+      localStorage.setItem("todos", json);
+    }
+  }, [todos]);
+
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -22,14 +39,11 @@ const App = () => {
     }
     document.getElementById('todoAdd').value = ""
   }
-
-  // Add the deleteToDo code here
   function deleteTodo(id) {
     let updatedTodos = [...todos].filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
   }
 
-  // Add the toggleComplete code here
   function toggleComplete(id) {
     let updatedTodos = [...todos].map((todo) => {
       if (todo.id === id) {
@@ -40,7 +54,6 @@ const App = () => {
     setTodos(updatedTodos);
   }
 
-  // Add the submitEdits code here
   function submitEdits(newtodo) {
     const updatedTodos = [...todos].map((todo) => {
       if (todo.id === newtodo.id) {
@@ -100,4 +113,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;
